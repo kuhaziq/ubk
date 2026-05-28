@@ -1,15 +1,122 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>KUHAZIQ</title>
+<head>
+  <title>KUHAZIQ</title>
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #E6D7FF;
+      font-family: Arial, sans-serif;
+    }
+
+    .logo {
+      width: 150px;
+      margin: 20px;
+    }
+
+    .box {
+      background-color: #4B0082;
+      color: #E0B3FF;
+      width: 70%;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    /* ===== INTRO ===== */
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: white;
+      text-align: center;
+    }
+
+    .track {
+      width: 80%;
+      height: 20px;
+      background: white;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 20px red;
+    }
+
+    .car {
+      position: absolute;
+      font-size: 50px;
+      top: -28px;
+      animation: race 1.5s linear infinite;
+    }
+
+    @keyframes race {
+      0% { left: -10%; }
+      100% { left: 100%; }
+    }
+
+    #countdown {
+      font-size: 90px;
+      font-weight: bold;
+      margin: 20px;
+    }
+
+    .intro-text {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+
+<body onclick="startSound()">
+
+<!-- 🔊 SOUND -->
+<audio id="intro-sound" src="Formula-One-F1-Sound-Effect-ProSounds(1).mp3"></audio>
+
+<!-- 🏁 INTRO -->
+<div id="intro">
+
+  <div class="track">
+    <div class="car">🏎️</div>
+  </div>
+
+  <h2 class="intro-text">GET READY YOUR FILE</h2>
+
+  <div id="countdown">3</div>
+
+</div>
+
+<!-- 🌐 WEBSITE -->
+<img src="https://smskp.edu.my/.png" class="logo">
+
+<div class="box">
+  <h1>SELAMAT DATANG KE UNIT BIMBINGAN KAUNSELING WEBSITE</h1>
+  <p style="color:white">SEKOLAH MENENGAH SAINS KUBANG PASU</p>
+</div>
+
+<!-- ⚡ SCRIPT -->
 <script>
+function startSound(){
+  document.getElementById("intro-sound").play();
+}
+
 window.onload = function() {
 
   let sound = document.getElementById("intro-sound");
-  sound.play();
-
   let count = 3;
   let el = document.getElementById("countdown");
+
+  // autoplay attempt
+  sound.play().catch(()=>{});
 
   let timer = setInterval(() => {
 
@@ -36,145 +143,6 @@ window.onload = function() {
 
 };
 </script>
-  </head>
-  <body>
-    <audio id="intro-sound" src="Formula-One-F1-Sound-Effect-ProSounds(1).mp3"></audio>
-    <div id="intro">
-       <div id="countdown">3</div>
-        <div class="track">
-          <div class="car">🏎️</div>
-        </div>
-        <div>
-          <h2 class="intro-text">GET READY YOUR PROFILE...</h2>
-        </div>
-    </div>
 
-    <img src="https://smskp.edu.my/.png" class="logo">
-
-    <div class="box">
-      <h1>SELAMAT DATANG KE UNIT BIMBINGAN KAUNSELING WEBSITE</h1>
-      <p style= "color:white">SEKOLAH MENENGAH SAINS KUBANG PASU</p>
-    </div>
-    <script>
-      window.onload = function() {
-
-  let sound = document.getElementById("introSound");
-  sound.play();
-
-      let count = 3;
-      let el = document.getElementById("countdown");
-      let timer = setInterval(() => {
-      count--;
-      if(count > 0){
-      el.innerText = count;
-  }
-      if(count === 0){
-      el.innerText = "GO!";
-  }
-
-      if(count < 0){
-      clearInterval(timer);
-        
-        sound.pause();
-      sound.currentTime = 0;
-      document.getElementById("intro").style.display = "none";
-  }
-
-}, 1000);
-
-</script>
-
-  </body>
-  <body>
-    <h1 style="color:white;text-align:center;font-size:40px">PERIHAL UNIT INI</h1>
-  </body>
-  <style>
-    .box1{
-        background-color: #4B0082;
-        color: #E0B3FF;
-        width: 70%;
-        margin: 50px auto;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-    }
-  </style>
-  <body>
-    <div class="box">
-      <p style="color:white;font-size:20px">Unit Bimbingan dan Kaunseling Sekolah ini diwujudkan untuk membantu murid-murid mendapatkan sokongan, bimbingan, dan panduan dalam menghadapi cabaran pembelajaran, emosi, serta kehidupan seharian di sekolah. Kami percaya bahawa setiap murid mempunyai potensi yang unik dan berhak untuk dibantu agar dapat berkembang dengan lebih baik dari segi akademik, sahsiah, dan kesejahteraan diri.</p>
-    </div>
-  </body>
-   <style>
-    .box1{
-        background-color: #4B0082;
-        color: #E0B3FF;
-        width: 70%;
-        margin: 50px auto;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-    }
-  </style>
-  <body>
-    <div class="box">
-      <p style="color:white;font-size:20px">Melalui laman web ini, kami menyediakan pelbagai kemudahan seperti ujian minda sihat, maklumat berkaitan kesihatan mental, serta sistem tempahan janji temu dengan kaunselor sekolah. Tujuan utama platform ini adalah untuk memudahkan murid mendapatkan bantuan dengan lebih cepat, mudah, dan selamat tanpa rasa segan atau takut.</p>
-    </div>
-  </body>
-  <style>
-    .box1{
-        background-color: #4B0082;
-        color: #E0B3FF;
-        width: 70%;
-        margin: 50px auto;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-    }
-  </style>
-  <body>
-    <div class="box">
-      <p style= "color:white;font-size:20px">Kami komited untuk mewujudkan persekitaran sekolah yang positif, prihatin, dan menyokong kesejahteraan mental semua murid. Setiap perkongsian dan sesi kaunseling adalah sulit dan akan dikendalikan secara profesional bagi memastikan murid merasa selesa dan dihargai.</p>
-    </div>
-  </body>
-  <style>
-    .box1{
-        background-color: #4B0082;
-        color: #white;
-        width: 70%;
-        margin: 50px auto;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-    }
-  </style>
-  <body>
-    <div class="box">
-      <h1 style="color:white">“Bersama Membina Kesejahteraan Diri dan Masa Depan Yang Lebih Cerah.”</h1>
-    </div>
-  </body>
-  <body>
-      <style>
-        .button-box{
-          margin:30px auto;
-          padding:12px;
-          border-radius:10px;
-          text-align:center;
-          background-color:#2C3E50;
-          width:fit-content;
-        }
-        button{
-          font-size:20px;
-          border:none;
-          background-color:transparent;
-          color:white;
-          font-weight:bold;
-          cursor:pointer;
-        }
-      </style>
-      <div class= "button-box">
-       <a href="about.html">
-        <button>PERGI KE LAMAN UTAMA</button>
-        </a>
-      </div>
-  </body>
+</body>
 </html>
