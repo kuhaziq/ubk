@@ -4,7 +4,7 @@
     <title>KUHAZIQ</title>
 
     <style>
-      <audio id="intro-sound"src="Formula One F1 - Sound Effect ProSounds (1).mp3"></audio>
+      <audio id="intro-sound"src="Formula-One-F1-Sound-Effect-ProSounds(1).mp3"></audio>
       body {
         margin: 0;
         background-color: #E6D7FF;
@@ -103,6 +103,9 @@
 
       if(count < 0){
       clearInterval(timer);
+        
+        sound.pause();
+      sound.currentTime = 0;
       document.getElementById("intro").style.display = "none";
   }
 
