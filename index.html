@@ -4,6 +4,7 @@
     <title>KUHAZIQ</title>
 
     <style>
+      <audio id="intro-sound"src="Formula One F1 - Sound Effect ProSounds (1).mp3"></audio>
       body {
         margin: 0;
         background-color: #E6D7FF;
@@ -84,6 +85,10 @@
       <p style= "color:white">SEKOLAH MENENGAH SAINS KUBANG PASU</p>
     </div>
     <script>
+      window.onload = function() {
+
+  let sound = document.getElementById("introSound");
+  sound.play();
 
       let count = 3;
       let el = document.getElementById("countdown");
